@@ -1,0 +1,165 @@
+.content {
+  padding: 5px; /* Tambahkan padding agar ada jarak */
+  box-sizing: border-box; /* Agar padding tidak menambah lebar card */
+}
+
+.card {
+  position: relative;
+  width: 200px;
+  height: 250px;
+  border-radius: 14px;
+  z-index: 11;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  ;
+}
+
+.bg {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 190px;
+  height: 240px;
+  z-index: 2;
+  background: rgba(255, 255, 255, .95);
+  backdrop-filter: blur(24px);
+  border-radius: 10px;
+  overflow: hidden;
+  outline: 2px solid white;
+}
+
+.blob {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #228B22;
+  opacity: 1;
+  filter: blur(12px);
+  animation: blob-bounce 5s infinite ease;
+}
+
+@keyframes blob-bounce {
+  0% {
+    transform: translate(-100%, -100%) translate3d(0, 0, 0);
+  }
+
+  25% {
+    transform: translate(-100%, -100%) translate3d(100%, 0, 0);
+  }
+
+  50% {
+    transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
+  }
+
+  75% {
+    transform: translate(-100%, -100%) translate3d(0, 100%, 0);
+  }
+
+  100% {
+    transform: translate(-100%, -100%) translate3d(0, 0, 0);
+  }
+}
+
+.map-responsive {
+  position: relative;
+  overflow: hidden;
+  padding-top: 75%; /* Rasio aspek 4:3 */
+}
+
+.map-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Animasi untuk logo */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Animasi Daun */
+@keyframes leafFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(20deg);
+  }
+}
+
+.leaf {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background: url('/assets/img/leaf2.png') no-repeat center/cover; /* Ganti dengan gambar daun */
+  animation: leafFloat 4s ease-in-out infinite;
+}
+
+.leaf-1 {
+  top: 10%;
+  left: 13%;
+  animation-delay: 0s;
+}
+
+.leaf-2 {
+  top: 28%;
+  right: 12%;
+  animation-delay: 1s;
+}
+
+.leaf-3 {
+  bottom: 5%;
+  left: 20%;
+  animation-delay: 2s;
+}
+
+/* Animasi Panel Surya */
+@keyframes solarGlow {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.solar-panel {
+  position: absolute;
+  width: 80px;
+  height: 80px; 
+  background: url('/assets/img/solar-panel-2.png') no-repeat center/contain;
+  animation: solarGlow 3s ease-in-out infinite;
+  top: 9%;
+  right: 1%;
+  z-index: 10;
+}
+
+/* Navbar */
+.nav {
+  position: relative;
+  z-index: 20; /* Pastikan navbar memiliki z-index lebih tinggi */
+  border-bottom: 1px solid transparent;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
