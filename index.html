@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Twiend.co</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="assets/img/logo-twiend-kecil.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+     <!-- Existing meta tags and title -->
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap">
+     <!-- Existing styles and scripts -->
+    <style>
+        /* Custom EcoGreen Theme */
+        :root {
+            --green-forest: #228B22; /* Forest Green */
+            --green-olive: #808000; /* Olive Green */
+            --green-pastel: #77DD77; /* Pastel Green */
+            --green-seafoam: #9FE2BF; /* Seafoam Green */
+            --green-teal: #008080; /* Teal Green */
+            --brown-earthy: #8B4513; /* Earthy Brown */
+            --orange-sunset: #FF8C42; /* Sunset Orange */
+            --beige-sand: #F5F5DC; /* Beige/Sand */
+            --cream-soft: #FFF5E1; /* Soft Cream */
+            --ijo-soft: #9DC08B; /* Soft Ijo */
+            --ijo-gimanagt: #5DB996; /* Ijo Gimanagt */
+            --ijo-lumutdkt: #118B50; /* Ijo Lumutdkt */
+            --green-forest-transparent: rgba(34, 139, 34, 0.5);
+        }
+
+
+
+        body {
+        font-family: 'Lora', serif;
+        /* Existing styles */
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Lora', serif;
+        }
+
+        p {
+            font-family: 'Lora', serif;
+        }
+
+
+    </style>
+    </head>
+    <body class="bg-[var(--beige-sand)] text-[var(--brown-earthy)]">
+    
+<!-- Navbar -->
+<nav class="bg-[var(--green-forest)] py-6 px-4 relative">
+    <div class="container mx-auto flex justify-between items-center">
+         <!-- Logo dengan Gambar -->
+         <a href="#" class="flex items-center text-white font-bold text-lg">
+            <img src="assets/img/logo-twiend-kecil.png" alt="Logo Twiend.co" class="h-8 w-auto mr-2 transform scale-150">
+            Twiend.co
+        </a>
+
+        <!-- Menu utama (Desktop) -->
+        <div class="hidden md:flex space-x-12">
+            <a id="makanan-navbar-btn" href="#makanan-section" class="text-white hover:text-[var(--green-pastel)] transition">Makanan</a>
+            <a id="minuman-navbar-btn" href="#minuman-section" class="text-white hover:text-[var(--green-pastel)] transition">Minuman</a>
+            <a id="about-navbar-btn" href="#about-section" class="text-white hover:text-[var(--green-pastel)] transition">About</a>
+        </div>
+
+        <!-- Hamburger Menu Button (Mobile) -->
+        <button id="menu-btn" class="md:hidden text-white text-2xl">
+            ☰
+        </button>
+    </div>
+       <!-- Efek gradasi di bawah navbar -->
+       <div class="absolute bottom-0 left-0 w-full h-[20px] bg-gradient-to-b from-[var(--green-forest)] to-[var(--beige-sand)]"></div>
+</nav>
+</nav>
+
+<!-- Sidebar Menu (Mobile) -->
+<div id="mobile-menu" class="fixed top-20 right-0 w-64 bg-[var(--green-forest-transparent)] bg-opacity-50 backdrop-blur-md text-white rounded-lg shadow-lg transform translate-x-full transition-transform duration-300 p-6 md:hidden z-50 hidden">
+    <button id="close-btn" class="text-white text-2xl absolute top-2 right-4">✕</button>
+    <a id="makanan-navbar-btn-mobile" href="#makanan-section" class="block mb-4 text-lg">Makanan</a>
+    <a id="minuman-navbar-btn-mobile" href="#minuman-section" class="block mb-4 text-lg">Minuman</a>
+    <a id="about-navbar-btn-mobile" href="#about-section" class="block text-lg">About</a>
+</div>
+
+<!-- Overlay saat menu dibuka -->
+<div id="overlay" class="fixed inset-0 bg-black opacity-50 hidden z-40"></div>
+
+
+    
+    <!-- Tentang Twiend Coffee -->
+<section class="bg-[var(--beige-sand)] py-12">
+    <div class="container mx-auto flex flex-col-reverse lg:flex-row items-center gap-8 px-6 md:px-12 lg:px-20">
+        <!-- Teks Deskripsi -->
+        <div class="lg:w-1/2 text-center lg:text-left">
+            <h2 class="text-4xl font-bold text-orange-500 mb-1">
+                Twiend.Co
+            </h2>
+            <h3 class="text-2xl font-semibold text-[var(--green-forest)]">
+                Eco Green & Green Energy
+            </h3>
+            <p class="text-lg text-[var(--green-teal)] leading-relaxed mt-4">
+                Twiend Coffee hadir dengan konsep <strong>EcoGreen dan Green Energy</strong>, mengusung keberlanjutan dan kepedulian terhadap lingkungan. 
+                Kami menggunakan bahan-bahan alami, kemasan ramah lingkungan, serta sumber energi hijau dalam operasional kami. 
+                Nikmati kopi terbaik dengan suasana yang nyaman dan penuh kehijauan.
+            </p>
+        </div>
+        
+
+        <!-- Gambar EcoGreen -->
+        <div class="lg:w-1/2 flex justify-center relative">
+            <!-- Gambar logo -->
+            <img 
+                src="https://png.pngtree.com/png-clipart/20240619/original/pngtree-concept-infographic-illustration-eco-green-electric-energy-solar-panel-png-image_15360227.png" 
+                alt="EcoGreen Coffee" 
+                class="max-w-[85%] mx-auto h-auto rounded-lg shadow-lg hover:scale-105 transition-transform duration-500 animate-float"
+            >
+            <!-- Animasi Daun -->
+            <div class="absolute top-0 left-0 w-full h-full">
+                <div class="leaf leaf-1 scale-75"></div>
+                <div class="leaf leaf-2 scale-75"></div>
+                <div class="leaf leaf-3 scale-75"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+   <!-- Tentang Twiend Coffee -->
+<!-- <section class="bg-[var(--beige-sand)] py-12">
+    <div class="container mx-auto flex flex-col-reverse lg:flex-row items-center gap-8 px-6 md:px-12 lg:px-16"> -->
+      <!-- Teks Deskripsi -->
+      <!-- <div class="lg:w-1/2 text-center lg:text-left">
+        <h2 class="text-3xl font-bold text-[var(--green-forest)] mb-4">
+            <span class="text-orange-500">Twiend.Co</span> Eco Green & Green Energy
+          </h2> -->
+          
+        <!-- <p class="text-lg text-[var(--green-teal)] leading-relaxed">
+          Twiend Coffee hadir dengan konsep <strong>EcoGreen dan Green Energy</strong>, mengusung keberlanjutan dan kepedulian terhadap lingkungan. 
+          Kami menggunakan bahan-bahan alami, kemasan ramah lingkungan, serta sumber energi hijau dalam operasional kami. 
+          Nikmati kopi terbaik dengan suasana yang nyaman dan penuh kehijauan.
+        </p>
+      </div> -->
+
+      <!-- Animasi Panel Surya -->
+      <!-- <div class="absolute top-0 left-0 w-full h-full">
+        <div class="solar-panel"></div>
+      </div>
+   -->
+      <!-- Gambar logo dan animasi -->
+      <!-- <div class="lg:w-1/3 flex justify-center relative">  -->
+        <!-- Gambar logo -->
+        <!-- <img 
+          src="assets/img/banner-twiend.png" 
+          alt="EcoGreen Coffee" 
+          class="w-1/2 md:w-1/3 lg:w-1/2 h-auto rounded-lg shadow-lg hover:scale-105 transition-transform duration-500 animate-float"
+        > -->
+      
+        <!-- Animasi Daun -->
+        <!-- <div class="absolute top-0 left-0 w-full h-full">
+          <div class="leaf leaf-1 scale-75"></div>
+          <div class="leaf leaf-2 scale-75"></div>
+          <div class="leaf leaf-3 scale-75"></div>
+        </div>
+      </div> -->
+      
+    <!-- </div>
+  </section> -->
+    
+    <!-- Main Content -->
+    <div id="menu-section" class="container mx-auto my-8 px-4 md:px-8 lg:px-16">
+        <h1 class="text-3xl font-semibold text-center mb-6 text-[var(--green-forest)]">Menu</h1>
+        
+<!-- Minuman Section dengan Desain Baru -->
+<!-- <section class="mb-12 max-w-screen-lg mx-auto">
+    <h2 class="text-2xl font-semibold text-center mb-8 text-[var(--green-forest)]">Minuman</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-12 justify-center">
+
+        <div class="card mx-auto">
+            <div class="bg"></div>
+            <div class="blob"></div>
+            <div class="content z-10 relative text-center">
+                <img src="https://frostingandfettuccine.com/wp-content/uploads/2022/12/Caramel-Iced-Coffee-6.jpg" alt="Coffee" class="w-24 h-24 object-cover rounded-full mx-auto mb-3">
+                <h3 class="text-lg font-semibold text-[var(--brown-earthy)]">Iced Coffee</h3>
+                <p class="text-xs text-gray-700">Kopi pilihan dengan aroma khas dan rasa yang nikmat.</p>
+                <p class="text-base font-bold mt-2 text-[var(--green-forest)]">Rp 20.000</p>
+            </div>
+        </div>
+        <div class="card mx-auto">
+            <div class="bg"></div>
+            <div class="blob"></div>
+            <div class="content z-10 relative text-center">
+                <img src="https://i0.wp.com/melscoffeetravels.com/wp-content/uploads/2023/10/IMG_1565-scaled.jpg?fit=2560%2C1706&ssl=1" alt="Cappuccino" class="w-24 h-24 object-cover rounded-full mx-auto mb-3">
+                <h3 class="text-lg font-semibold text-[var(--brown-earthy)]">Nitro Cold Brew</h3>
+                <p class="text-xs text-gray-700">Kombinasi espresso, susu, dan busa susu yang lembut.</p>
+                <p class="text-base font-bold mt-2 text-[var(--green-forest)]">Rp 20.000</p>
+            </div>
+        </div>
+        <div class="card mx-auto">
+            <div class="bg"></div>
+            <div class="blob"></div>
+            <div class="content z-10 relative text-center">
+                <img src="https://www.thespruceeats.com/thmb/sxtRqb0HqFvNPb1DdnFBQguzqOA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/red-beer-for-brunch-759786-hero-01-db6c450129e24981a1245eedc4037e14.jpg" alt="Coffee" class="w-24 h-24 object-cover rounded-full mx-auto mb-3">
+                <h3 class="text-lg font-semibold text-[var(--brown-earthy)]">Red Eye</h3>
+                <p class="text-xs text-gray-700">Kopi pilihan dengan aroma khas dan rasa yang nikmat.</p>
+                <p class="text-base font-bold mt-2 text-[var(--green-forest)]">Rp 20.000</p>
+            </div>
+        </div>
+        <div class="card mx-auto">
+            <div class="bg"></div>
+            <div class="blob"></div>
+            <div class="content z-10 relative text-center">
+                <img src="https://www.justonecookbook.com/wp-content/uploads/2023/07/Iced-Matcha-Latte-0331-V.jpg" alt="Coffee" class="w-24 h-24 object-cover rounded-full mx-auto mb-3">
+                <h3 class="text-lg font-semibold text-[var(--brown-earthy)]">Green Tea Latte</h3>
+                <p class="text-xs text-gray-700">Kopi pilihan dengan aroma khas dan rasa yang nikmat.</p>
+                <p class="text-base font-bold mt-2 text-[var(--green-forest)]">Rp 25.000</p>
+            </div>
+        </div>
+        <div class="card mx-auto">
+            <div class="bg"></div>
+            <div class="blob"></div>
+            <div class="content z-10 relative text-center">
+                <img src="https://midwestniceblog.com/wp-content/uploads/2022/09/homemade-dirty-chai-latte-recipe.jpg" alt="Coffee" class="w-24 h-24 object-cover rounded-full mx-auto mb-3">
+                <h3 class="text-lg font-semibold text-[var(--brown-earthy)]">Chai Latte</h3>
+                <p class="text-xs text-gray-700">Kopi pilihan dengan aroma khas dan rasa yang nikmat.</p>
+                <p class="text-base font-bold mt-2 text-[var(--green-forest)]">Rp 25.000</p>
+            </div>
+        </div>
+        <div class="card mx-auto">
+            <div class="bg"></div>
+            <div class="blob"></div>
+            <div class="content z-10 relative text-center">
+                <img src="https://img.kurio.network/p77Y-qRIYz8SSv_tCeGJ1diJXn8=/768x432/filters:quality(80)/https://kurio-img.kurioapps.com/19/05/28/50de339f-7e20-4738-b9a4-a2ba49991add.jpg" alt="Cappuccino" class="w-24 h-24 object-cover rounded-full mx-auto mb-3">
+                <h3 class="text-lg font-semibold text-[var(--brown-earthy)]">Cappuccino</h3>
+                <p class="text-xs text-gray-700">Kombinasi espresso, susu, dan busa susu yang lembut.</p>
+                <p class="text-base font-bold mt-2 text-[var(--green-forest)]">Rp 30.000</p>
+            </div>
+        </div>
+        <div class="card mx-auto">
+            <div class="bg"></div>
+            <div class="blob"></div>
+            <div class="content z-10 relative text-center">
+                <img src="https://assets.bonappetit.com/photos/57accdd1f1c801a1038bc794/1:1/w_2560%2Cc_limit/Hot-Chocolate-2-of-5.jpg" alt="Coffee" class="w-24 h-24 object-cover rounded-full mx-auto mb-3">
+                <h3 class="text-lg font-semibold text-[var(--brown-earthy)]">Hot Chocolate</h3>
+                <p class="text-xs text-gray-700">Kopi pilihan dengan aroma khas dan rasa yang nikmat.</p>
+                <p class="text-base font-bold mt-2 text-[var(--green-forest)]">Rp 25.000</p>
+            </div>
+        </div>
+        <div class="card mx-auto">
+            <div class="bg"></div>
+            <div class="blob"></div>
+            <div class="content z-10 relative text-center">
+                <img src="https://cdn.pixabay.com/photo/2022/04/15/09/14/coffee-7133980_1280.jpg" alt="Coffee" class="w-24 h-24 object-cover rounded-full mx-auto mb-3">
+                <h3 class="text-lg font-semibold text-[var(--brown-earthy)]">Kopi Spesial</h3>
+                <p class="text-xs text-gray-700">Kopi pilihan dengan aroma khas dan rasa yang nikmat.</p>
+                <p class="text-base font-bold mt-2 text-[var(--green-forest)]">Rp 25.000</p>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<!-- Minuman Section dengan Filter Kategori -->
+<section id="minuman-section" class="mb-12 max-w-screen-lg mx-auto">
+    <h2 class="text-2xl font-semibold text-center mb-8 text-[var(--green-forest)]">Minuman</h2>
+    
+    <!-- Tombol Kategori -->
+    <div class="flex flex-wrap justify-center gap-4 mb-8">
+        <button onclick="filterMenu('all')" class="category-btn bg-[var(--green-forest)] text-white px-4 py-2 rounded-lg">All</button>
+        <button onclick="filterMenu('coffee')" class="category-btn bg-gray-300 text-black px-4 py-2 rounded-lg">Coffee</button>
+        <button onclick="filterMenu('non-coffee')" class="category-btn bg-gray-300 text-black px-4 py-2 rounded-lg">Non-Coffee</button>
+        <button onclick="filterMenu('pure-juice')" class="category-btn bg-gray-300 text-black px-4 py-2 rounded-lg">Pure Juice</button>
+        <button onclick="filterMenu('healthy-juice')" class="category-btn bg-gray-300 text-black px-4 py-2 rounded-lg">Healthy Juice</button>
+    </div>
+
+    <!-- Grid Minuman -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-12 justify-center">
+        
+        <!-- Coffee Items -->
+        <div class="card mx-auto coffee">
+            <div class="bg"></div>
+            <div class="blob"></div>
+            <div class="content z-10 relative text-center">
+                <img src="https://frostingandfettuccine.com/wp-content/uploads/2022/12/Caramel-Iced-Coffee-6.jpg" alt="Coffee" class="w-24 h-24 object-cover rounded-full mx-auto mb-3">
+                <h3 class="text-lg font-semibold text-[var(--brown-earthy)]">Iced Coffee</h3>
+                <p class="text-xs text-gray-700">Kopi pilihan dengan aroma khas dan rasa yang nikmat.</p>
+                <p class="text-base font-bold mt-2 text-[var(--green-forest)]">Rp 20.000</p>
+            </div>
+        </div>
+
+        <div class="card mx-auto coffee">
+            <div class="bg"></div>
+            <div class="blob"></div>
+            <div class="content z-10 relative text-center">
+                <img src="https://i0.wp.com/melscoffeetravels.com/wp-content/uploads/2023/10/IMG_1565-scaled.jpg?fit=2560%2C1706&ssl=1" alt="Cappuccino" class="w-24 h-24 object-cover rounded-full mx-auto mb-3">
+                <h3 class="text-lg font-semibold text-[var(--brown-earthy)]">Nitro Cold Brew</h3>
+                <p class="text-xs text-gray-700">Kombinasi espresso, susu, dan busa susu yang lembut.</p>
+                <p class="text-base font-bold mt-2 text-[var(--green-forest)]">Rp 20.000</p>
+            </div>
+        </div>
+
+        
+        <div class="card mx-auto coffee">
+            <div class="bg"></div>
+            <div class="blob"></div>
+            <div class="content z-10 relative text-center">
+                <img src="https://img.kurio.network/p77Y-qRIYz8SSv_tCeGJ1diJXn8=/768x432/filters:quality(80)/https://kurio-img.kurioapps.com/19/05/28/50de339f-7e20-4738-b9a4-a2ba49991add.jpg" alt="Cappuccino" class="w-24 h-24 object-cover rounded-full mx-auto mb-3">
+                <h3 class="text-lg font-semibold text-[var(--brown-earthy)]">Cappuccino</h3>
+                <p class="text-xs text-gray-700">Kombinasi espresso, susu, dan busa susu yang lembut.</p>
+                <p class="text-base font-bold mt-2 text-[var(--green-forest)]">Rp 30.000</p>
+            </div>
+        </div>
+        
+        <div class="card mx-auto coffee">
+            <div class="bg"></div>
+            <div class="blob"></div>
+            <div class="content z-10 relative text-center">
+                <img src="https://cdn.pixabay.com/photo/2022/04/15/09/14/coffee-7133980_1280.jpg" alt="Coffee" class="w-24 h-24 object-cover rounded-full mx-auto mb-3">
+                <h3 class="text-lg font-semibold text-[var(--brown-earthy)]">Kopi Spesial</h3>
+                <p class="text-xs text-gray-700">Kopi pilihan dengan aroma khas dan rasa yang nikmat.</p>
+                <p class="text-base font-bold mt-2 text-[var(--green-forest)]">Rp 25.000</p>
+            </div>
+        </div>
+
+        <!-- Non-Coffee Items -->
+        <div class="card mx-auto non-coffee">
+            <div class="bg"></div>
+            <div class="blob"></div>
+            <div class="content z-10 relative text-center">
+                <img src="https://assets.bonappetit.com/photos/57accdd1f1c801a1038bc794/1:1/w_2560%2Cc_limit/Hot-Chocolate-2-of-5.jpg" alt="Coffee" class="w-24 h-24 object-cover rounded-full mx-auto mb-3">
+                <h3 class="text-lg font-semibold text-[var(--brown-earthy)]">Hot Chocolate</h3>
+                <p class="text-xs text-gray-700">Kopi pilihan dengan aroma khas dan rasa yang nikmat.</p>
+                <p class="text-base font-bold mt-2 text-[var(--green-forest)]">Rp 25.000</p>
+            </div>
+        </div>
+
+        <div class="card mx-auto non-coffee">
+            <div class="bg"></div>
+            <div class="blob"></div>
+            <div class="content z-10 relative text-center">
+                <img src="https://www.thespruceeats.com/thmb/sxtRqb0HqFvNPb1DdnFBQguzqOA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/red-beer-for-brunch-759786-hero-01-db6c450129e24981a1245eedc4037e14.jpg" alt="Coffee" class="w-24 h-24 object-cover rounded-full mx-auto mb-3">
+                <h3 class="text-lg font-semibold text-[var(--brown-earthy)]">Red Eye</h3>
+                <p class="text-xs text-gray-700">Kopi pilihan dengan aroma khas dan rasa yang nikmat.</p>
+                <p class="text-base font-bold mt-2 text-[var(--green-forest)]">Rp 20.000</p>
+            </div>
+        </div>
+
+        <div class="card mx-auto non-coffee">
+            <div class="bg"></div>
+            <div class="blob"></div>
+            <div class="content z-10 relative text-center">
+                <img src="https://www.justonecookbook.com/wp-content/uploads/2023/07/Iced-Matcha-Latte-0331-V.jpg" alt="Coffee" class="w-24 h-24 object-cover rounded-full mx-auto mb-3">
+                <h3 class="text-lg font-semibold text-[var(--brown-earthy)]">Green Tea Latte</h3>
+                <p class="text-xs text-gray-700">Kopi pilihan dengan aroma khas dan rasa yang nikmat.</p>
+                <p class="text-base font-bold mt-2 text-[var(--green-forest)]">Rp 25.000</p>
+            </div>
+        </div>
+
+        <div class="card mx-auto non-coffee">
+            <div class="bg"></div>
+            <div class="blob"></div>
+            <div class="content z-10 relative text-center">
+                <img src="https://midwestniceblog.com/wp-content/uploads/2022/09/homemade-dirty-chai-latte-recipe.jpg" alt="Coffee" class="w-24 h-24 object-cover rounded-full mx-auto mb-3">
+                <h3 class="text-lg font-semibold text-[var(--brown-earthy)]">Chai Latte</h3>
+                <p class="text-xs text-gray-700">Kopi pilihan dengan aroma khas dan rasa yang nikmat.</p>
+                <p class="text-base font-bold mt-2 text-[var(--green-forest)]">Rp 25.000</p>
+            </div>
+        </div>
+
+        <!-- Pure Juice Items -->
+        <div class="card mx-auto pure-juice">
+            <div class="bg"></div>
+            <div class="blob"></div>
+            <div class="content z-10 relative text-center">
+                <img src="https://www.crazyvegankitchen.com/wp-content/uploads/2023/06/mango-juice-recipe.jpg" alt="Mango" class="w-24 h-24 object-cover rounded-full mx-auto mb-3">
+                <h3 class="text-lg font-semibold text-[var(--brown-earthy)]">Mango</h3>
+                <p class="text-xs text-gray-700">Kopi pilihan dengan aroma khas dan rasa yang nikmat.</p>
+                <p class="text-base font-bold mt-2 text-[var(--green-forest)]">Rp 10.000</p>
+            </div>
+        </div>
+
+        <!-- Healthy Juice Items -->
+        <div class="card mx-auto healthy-juice">
+            <div class="bg"></div>
+            <div class="blob"></div>
+            <div class="content z-10 relative text-center">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPxZiw0_EcehgvrzJV6HTtSA_3tZ0ou6rwkQ&s" alt="Mango" class="w-24 h-24 object-cover rounded-full mx-auto mb-3">
+                <h3 class="text-lg font-semibold text-[var(--brown-earthy)]">Lean Green</h3>
+                <p class="text-xs text-gray-700">Kopi pilihan dengan aroma khas dan rasa yang nikmat.</p>
+                <p class="text-base font-bold mt-2 text-[var(--green-forest)]">Rp 20.000</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+        <!-- Makanan Section -->
+        <section id="makanan-section" class="mb-12 max-w-screen-lg mx-auto">
+            <h2 class="text-2xl font-semibold text-center mb-8 text-[var(--green-forest)]">Makanan</h2>
+            
+            <!-- Tombol Kategori -->
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <button onclick="filterFood('all')" class="category-btn bg-[var(--green-forest)] text-white px-4 py-2 rounded-lg">All</button>
+                <button onclick="filterFood('main-course')" class="category-btn bg-gray-300 text-black px-4 py-2 rounded-lg">Main Course</button>
+                <button onclick="filterFood('snacks')" class="category-btn bg-gray-300 text-black px-4 py-2 rounded-lg">Snacks</button>
+                <button onclick="filterFood('dessert')" class="category-btn bg-gray-300 text-black px-4 py-2 rounded-lg">Dessert</button>
+            </div>
+        
+            <!-- Grid Makanan -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-12 justify-center">
+                
+                <!-- Main Course Items -->
+                <div class="card mx-auto main-course">
+                    <div class="bg"></div>
+                    <div class="blob"></div>
+                    <div class="content z-10 relative text-center">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdkZkCrMPIQG7YubqQvMVHUO_nvnzLjPEqgQ&s" alt="Main Course" class="w-24 h-24 object-cover rounded-full mx-auto mb-3">
+                        <h3 class="text-lg font-semibold text-[var(--brown-earthy)]">Special Cat Rice</h3>
+                        <p class="text-xs text-gray-700">Nasi goreng spesial dengan bumbu tradisional.</p>
+                        <p class="text-base font-bold mt-2 text-[var(--green-forest)]">Rp 15.000</p>
+                    </div>
+                </div>
+        
+                <div class="card mx-auto main-course">
+                    <div class="bg"></div>
+                    <div class="blob"></div>
+                    <div class="content z-10 relative text-center">
+                        <img src="https://javaprivatetour.com/img/destinasi/8b041c5bee76e6443f901afbf072161a.png" alt="Main Course" class="w-24 h-24 object-cover rounded-full mx-auto mb-3">
+                        <h3 class="text-lg font-semibold text-[var(--brown-earthy)]">Special Petis Tofu</h3>
+                        <p class="text-xs text-gray-700">Sate ayam dengan bumbu kacang khas.</p>
+                        <p class="text-base font-bold mt-2 text-[var(--green-forest)]">Rp 15.000</p>
+                    </div>
+                </div>
+
+                <div class="card mx-auto main-course">
+                    <div class="bg"></div>
+                    <div class="blob"></div>
+                    <div class="content z-10 relative text-center">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgE9xtnk-XhkddXP0i_6aYDzYvFizDsl4BKw&s" alt="Main Course" class="w-24 h-24 object-cover rounded-full mx-auto mb-3">
+                        <h3 class="text-lg font-semibold text-[var(--brown-earthy)]">Glass of Cookies</h3>
+                        <p class="text-xs text-gray-700">Sate ayam dengan bumbu kacang khas.</p>
+                        <p class="text-base font-bold mt-2 text-[var(--green-forest)]">Rp 15.000</p>
+                    </div>
+                </div>
+        
+                <!-- Snacks Items -->
+                <div class="card mx-auto snacks">
+                    <div class="bg"></div>
+                    <div class="blob"></div>
+                    <div class="content z-10 relative text-center">
+                        <img src="https://www.recipetineats.com/tachyon/2022/09/Fries-with-rosemary-salt_1.jpg" alt="Snacks" class="w-24 h-24 object-cover rounded-full mx-auto mb-3">
+                        <h3 class="text-lg font-semibold text-[var(--brown-earthy)]">Whole French Fries</h3>
+                        <p class="text-xs text-gray-700">Kentang goreng renyah dengan saus pilihan.</p>
+                        <p class="text-base font-bold mt-2 text-[var(--green-forest)]">Rp 15.000</p>
+                    </div>
+                </div>
+        
+                <div class="card mx-auto snacks">
+                    <div class="bg"></div>
+                    <div class="blob"></div>
+                    <div class="content z-10 relative text-center">
+                        <img src="https://www.maryswholelife.com/wp-content/uploads/2022/08/Air-Fryer-Potato-Wedges-04.jpg" alt="Snacks" class="w-24 h-24 object-cover rounded-full mx-auto mb-3">
+                        <h3 class="text-lg font-semibold text-[var(--brown-earthy)]">Half Wedges French Fries</h3>
+                        <p class="text-xs text-gray-700">Irisan pizza dengan topping favorit.</p>
+                        <p class="text-base font-bold mt-2 text-[var(--green-forest)]">Rp 15.000</p>
+                    </div>
+                </div>
+
+                <div class="card mx-auto snacks">
+                    <div class="bg"></div>
+                    <div class="blob"></div>
+                    <div class="content z-10 relative text-center">
+                        <img src="https://www.recipetineats.com/tachyon/2022/09/Crispy-Fries_8.jpg" alt="Snacks" class="w-24 h-24 object-cover rounded-full mx-auto mb-3">
+                        <h3 class="text-lg font-semibold text-[var(--brown-earthy)]">Regular Lenght French Fries</h3>
+                        <p class="text-xs text-gray-700">Irisan pizza dengan topping favorit.</p>
+                        <p class="text-base font-bold mt-2 text-[var(--green-forest)]">Rp 15.000</p>
+                    </div>
+                </div>
+
+                <div class="card mx-auto snacks">
+                    <div class="bg"></div>
+                    <div class="blob"></div>
+                    <div class="content z-10 relative text-center">
+                        <img src="https://www.allrecipes.com/thmb/iNGV8JdDD9jrmmIFU-k-SmqUst8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/AR-150313-thai-sweet-sticky-rice-with-mango-khao-neeo-mamuang-ddmfs-1x2-hero-0e40dae3393645e28e6ca2018dc17e84.jpg" alt="Snacks" class="w-24 h-24 object-cover rounded-full mx-auto mb-3">
+                        <h3 class="text-lg font-semibold text-[var(--brown-earthy)]">All The Flavours Sticky Rice</h3>
+                        <p class="text-xs text-gray-700">Irisan pizza dengan topping favorit.</p>
+                        <p class="text-base font-bold mt-2 text-[var(--green-forest)]">Rp 15.000</p>
+                    </div>
+                </div>
+        
+                <!-- Dessert Items -->
+                <div class="card mx-auto dessert">
+                    <div class="bg"></div>
+                    <div class="blob"></div>
+                    <div class="content z-10 relative text-center">
+                        <img src="https://www.spendwithpennies.com/wp-content/uploads/2017/06/Vanilla-Dessert-Fruit-Salad-25.jpg" alt="Dessert" class="w-24 h-24 object-cover rounded-full mx-auto mb-3">
+                        <h3 class="text-lg font-semibold text-[var(--brown-earthy)]">Special Fruit Pudding</h3>
+                        <p class="text-xs text-gray-700">Kue coklat lembut dengan hiasan krim.</p>
+                        <p class="text-base font-bold mt-2 text-[var(--green-forest)]">Rp 15.000</p>
+                    </div>
+                </div>
+        
+                <div class="card mx-auto dessert">
+                    <div class="bg"></div>
+                    <div class="blob"></div>
+                    <div class="content z-10 relative text-center">
+                        <img src="https://images.immediate.co.uk/production/volatile/sites/30/2014/05/Epic-summer-salad-hub-2646e6e.jpg?resize=768,574" alt="Dessert" class="w-24 h-24 object-cover rounded-full mx-auto mb-3">
+                        <h3 class="text-lg font-semibold text-[var(--brown-earthy)]">Special Salad</h3>
+                        <p class="text-xs text-gray-700">Es krim segar dengan berbagai rasa.</p>
+                        <p class="text-base font-bold mt-2 text-[var(--green-forest)]">Rp 15.000</p>
+                    </div>
+                </div>
+
+                <div class="card mx-auto dessert">
+                    <div class="bg"></div>
+                    <div class="blob"></div>
+                    <div class="content z-10 relative text-center">
+                        <img src="https://media.istockphoto.com/id/493386418/photo/fruit-on-wooden-skewers-dessert-skewers.jpg?s=612x612&w=0&k=20&c=zluNmsoeAUa8cOSDdS1i5ULAPhLXGAFxU49ql9fyX28=" alt="Dessert" class="w-24 h-24 object-cover rounded-full mx-auto mb-3">
+                        <h3 class="text-lg font-semibold text-[var(--brown-earthy)]">Special Fruit Satay</h3>
+                        <p class="text-xs text-gray-700">Es krim segar dengan berbagai rasa.</p>
+                        <p class="text-base font-bold mt-2 text-[var(--green-forest)]">Rp 15.000</p>
+                    </div>
+                </div>
+
+                <div class="card mx-auto dessert">
+                    <div class="bg"></div>
+                    <div class="blob"></div>
+                    <div class="content z-10 relative text-center">
+                        <img src="https://asset.kompas.com/crops/Y51LIdK6q4UR1-9ljUAI-frZm2w=/5x22:973x667/1200x800/data/photo/2024/10/19/6712a3a13a912.jpg" alt="Dessert" class="w-24 h-24 object-cover rounded-full mx-auto mb-3">
+                        <h3 class="text-lg font-semibold text-[var(--brown-earthy)]">Special Fruit Pie</h3>
+                        <p class="text-xs text-gray-700">Es krim segar dengan berbagai rasa.</p>
+                        <p class="text-base font-bold mt-2 text-[var(--green-forest)]">Rp 15.000</p>
+                    </div>
+                </div>
+        
+            </div>
+        </section>
+    
+        <!-- Informasi Tambahan -->
+        <div class="mt-8 text-center">
+            <h2 class="text-2xl font-semibold mb-4 text-[var(--green-teal)]">Tentang Twiend.co</h2>
+            <p class="text-[var(--brown-earthy)]">Kafe dengan nuansa hangat dan nyaman, cocok untuk bersantai dan menikmati hidangan terbaik kami.</p>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <!-- <footer class="bg-[var(--green-forest)] text-white text-center py-4">
+        <p>&copy; 2025 Twiend.co. All rights reserved.</p>
+    </footer> -->
+    <!-- Efek gradasi di atas footer -->
+<div class="w-full h-[20px] bg-gradient-to-b from-[var(--beige-sand)] to-[var(--ijo-soft)]"></div>
+
+    <footer class="bg-[var(--ijo-soft)]">
+        <div class="mx-auto max-w-screen-xl px-4 py-2 sm:py-16 sm:px-6 lg:px-8">
+          <!-- Bagian CTA (Call to Action) -->
+          <div class="flex flex-col items-center gap-4 rounded-lg bg-[var(--ijo-gimanagt)] p-6 shadow-lg sm:flex-row sm:justify-between">
+            <strong class="text-xl text-[var(--cream-soft)] sm:text-xl">Look at our menu</strong>
+            <a
+              id="see-now-btn"
+              class="inline-flex items-center gap-2 rounded-full border border-[var(--cream-soft)] bg-[var(--cream-soft)] px-8 py-3 text-[var(--green-forest)] hover:bg-[var(--ijo-lumutdkt)] hover:text-[var(--cream-soft)] focus:outline-none focus:ring active:bg-[var(--cream-soft)]/90"
+              href="#menu-section"
+            >
+              <span class="text-sm font-medium">See now</span>
+              <svg
+                class="size-5 rtl:rotate-180"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </a>
+          </div>
+      
+          <!-- Bagian Konten Footer -->
+          <footer id="about-section" class="lg:grid lg:grid-cols-4 mt-16 gap`">
+            <!-- Peta -->
+            <div class="map-responsive lg:col-span-1">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.6461477072526!2d110.58264707481776!3d-7.721061792296961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a45f030b18403%3A0x19d0b9603a7bab3d!2sTwiend.Co!5e0!3m2!1sid!2sid!4v1739069438793!5m2!1sid!2sid"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+              
+            <!-- Informasi Kontak dan Layanan -->
+            <div class="px-4 py-8 sm:px-6 lg:col-span-3 lg:px-8">
+              <div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
+                <!-- Kontak -->
+                <div>
+                  <p>
+                    <span class="text-xs uppercase tracking-wide text-[var(--cream-soft)]">Call us</span>
+                    <a class="block text-2xl font-medium text-[var(--cream-soft)] hover:opacity-75 sm:text-3xl">
+                      0123456789
+                    </a>
+                  </p>
+                  <ul class="mt-8 space-y-1 text-sm text-[var(--cream-soft)]">
+                    <li>Monday to Friday: 8am - 5pm</li>
+                    <li>Weekend: 8am - 3pm</li>
+                  </ul>
+                  <ul class="mt-8 flex gap-6">
+                    <!-- Instagram -->
+                    <li>
+                      <a href="https://www.instagram.com/yourusername" rel="noreferrer" target="_blank" class="text-[var(--cream-soft)] transition hover:opacity-75">
+                        <span class="sr-only">Instagram</span>
+                        <svg class="h-12 w-12 hover:scale-150 transition-transform duration-200" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path 
+                            d="M7.75 2C4.126 2 2 4.126 2 7.75v8.5C2 19.874 4.126 22 7.75 22h8.5C19.874 22 22 19.874 22 16.25v-8.5C22 4.126 19.874 2 16.25 2h-8.5ZM12 6.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11Zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm5.75-.25a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-1.5 0v-.5a.75.75 0 0 1 .75-.75Z"
+                          />
+                        </svg>
+                      </a>
+                    </li>
+                  
+                    <!-- TikTok -->
+                    <li>
+                      <a href="https://www.tiktok.com/@yourusername" rel="noreferrer" target="_blank" class="text-[var(--cream-soft)] transition hover:opacity-75">
+                        <span class="sr-only">TikTok</span>
+                        <svg class="h-12 w-12 hover:scale-150 transition-transform duration-200" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path 
+                            d="M12.25 2h2.25a4.5 4.5 0 0 0 4.5 4.5V9a7.5 7.5 0 0 1-6-3v7.5a3 3 0 1 1-3-3h.75V14H10a1.5 1.5 0 1 0 1.5-1.5V2Z"
+                          />
+                        </svg>
+                      </a>
+                    </li>
+                  
+                    <!-- WhatsApp -->
+                    <li>
+                      <a href="https://wa.me/yourphonenumber" rel="noreferrer" target="_blank" class="text-[var(--cream-soft)] transition hover:opacity-75">
+                        <span class="sr-only">WhatsApp</span>
+                        <svg class="h-12 w-12 hover:scale-150 transition-transform duration-200" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path 
+                            d="M12 2a10 10 0 0 0-8.561 15.185L2 22l4.815-1.438A10 10 0 1 0 12 2Zm4.005 13.243c-.347.992-2.048 1.76-2.86 1.87-.724.1-1.606.15-2.59-.25-2.154-.85-3.537-2.96-3.64-3.097-.1-.136-.87-1.162-.87-2.224 0-1.063.548-1.59.743-1.81.198-.22.428-.274.57-.274.144 0 .287 0 .41.006.132.005.31-.05.486.37.197.472.678 1.62.737 1.735.06.113.097.247.02.38-.075.136-.117.22-.227.35-.112.13-.235.287-.338.387-.112.105-.23.223-.098.448.132.225.587.973 1.263 1.575.868.778 1.601 1.02 1.856 1.134.27.11.422.094.58-.06.152-.15.658-.768.833-1.03.177-.263.342-.223.57-.136.225.086 1.44.675 1.686.797.245.12.407.176.468.27.065.094.065.986-.283 1.976Z"
+                          />
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                                   
+      
+              <!-- Bagian Hak Cipta -->
+              <div class="mt-12 border-t border-[var(--green-teal)] pt-12">
+                <div class="sm:flex sm:items-center sm:justify-between sm:gap-4">
+                  <ul class="flex flex-wrap gap-4 text-xs justify-center sm:justify-start">
+                    <li>
+                      <a href="#" class="text-[var(--cream-soft)] transition hover:opacity-75">Terms & Conditions</a>
+                    </li>
+                    <li>
+                      <a href="#" class="text-[var(--cream-soft)] transition hover:opacity-75">Privacy Policy</a>
+                    </li>
+                    <li>
+                      <a href="#" class="text-[var(--cream-soft)] transition hover:opacity-75">Cookies</a>
+                    </li>
+                  </ul>
+                  <p class="mt-8 text-xs text-[var(--cream-soft)] sm:mt-0 text-center sm:text-right">
+                    &copy; 2024. Company Name. All rights reserved.
+                  </p>
+                </div>
+              </div>
+              
+            </div>
+          </footer>
+        </div>
+      </footer>
+    
+        <!-- JavaScript untuk Toggle Menu -->
+<script>
+    //menu atas strip 3 navbar
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const closeBtn = document.getElementById('close-btn');
+const overlay = document.getElementById('overlay');
+
+menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.remove('hidden');
+    setTimeout(() => {
+        mobileMenu.classList.remove('translate-x-full');
+        mobileMenu.classList.add('translate-x-0');
+    }, 10); // Memberi sedikit jeda agar animasi muncul
+    overlay.classList.remove('hidden');
+});
+
+closeBtn.addEventListener('click', () => {
+    mobileMenu.classList.remove('translate-x-0');
+    mobileMenu.classList.add('translate-x-full');
+    setTimeout(() => mobileMenu.classList.add('hidden'), 300);
+    overlay.classList.add('hidden');
+});
+
+overlay.addEventListener('click', () => {
+    mobileMenu.classList.remove('translate-x-0');
+    mobileMenu.classList.add('translate-x-full');
+    setTimeout(() => mobileMenu.classList.add('hidden'), 300);
+    overlay.classList.add('hidden');
+});
+
+
+
+
+    // Fungsi untuk filter kategori minuman
+function filterMenu(category) {
+    const allDrinkCards = document.querySelectorAll('.card.coffee, .card.non-coffee, .card.pure-juice, .card.healthy-juice');
+    const coffeeCards = document.querySelectorAll('.card.coffee');
+    const nonCoffeeCards = document.querySelectorAll('.card.non-coffee');
+    const pureJuiceCards = document.querySelectorAll('.card.pure-juice');
+    const healthyJuiceCards = document.querySelectorAll('.card.healthy-juice');
+    const drinkButtons = document.querySelectorAll('.category-btn[onclick^="filterMenu"]');
+
+    // Reset warna tombol minuman
+    drinkButtons.forEach(btn => btn.classList.replace('bg-[var(--green-forest)]', 'bg-gray-300'));
+
+    // Atur warna tombol aktif
+    if (category === 'all') {
+        drinkButtons[0].classList.replace('bg-gray-300', 'bg-[var(--green-forest)]');
+        allDrinkCards.forEach(card => {
+            card.style.visibility = "visible";
+            card.style.opacity = "1";
+            card.style.position = "relative";
+            card.style.transition = "opacity 0.3s ease-in-out";
+        });
+    } else if (category === 'coffee') {
+        drinkButtons[1].classList.replace('bg-gray-300', 'bg-[var(--green-forest)]');
+        coffeeCards.forEach(card => {
+            card.style.visibility = "visible";
+            card.style.opacity = "1";
+            card.style.position = "relative";
+        });
+        nonCoffeeCards.forEach(card => {
+            card.style.visibility = "hidden";
+            card.style.opacity = "0";
+            card.style.position = "absolute";
+        });
+        pureJuiceCards.forEach(card => {
+            card.style.visibility = "hidden";
+            card.style.opacity = "0";
+            card.style.position = "absolute";
+        });
+        healthyJuiceCards.forEach(card => {
+            card.style.visibility = "hidden";
+            card.style.opacity = "0";
+            card.style.position = "absolute";
+        });
+    } else if (category === 'non-coffee') {
+        drinkButtons[2].classList.replace('bg-gray-300', 'bg-[var(--green-forest)]');
+        nonCoffeeCards.forEach(card => {
+            card.style.visibility = "visible";
+            card.style.opacity = "1";
+            card.style.position = "relative";
+        });
+        coffeeCards.forEach(card => {
+            card.style.visibility = "hidden";
+            card.style.opacity = "0";
+            card.style.position = "absolute";
+        });
+        pureJuiceCards.forEach(card => {
+            card.style.visibility = "hidden";
+            card.style.opacity = "0";
+            card.style.position = "absolute";
+        });
+        healthyJuiceCards.forEach(card => {
+            card.style.visibility = "hidden";
+            card.style.opacity = "0";
+            card.style.position = "absolute";
+        });
+    } else if (category === 'pure-juice') {
+        drinkButtons[3].classList.replace('bg-gray-300', 'bg-[var(--green-forest)]');
+        pureJuiceCards.forEach(card => {
+            card.style.visibility = "visible";
+            card.style.opacity = "1";
+            card.style.position = "relative";
+        });
+        coffeeCards.forEach(card => {
+            card.style.visibility = "hidden";
+            card.style.opacity = "0";
+            card.style.position = "absolute";
+        });
+        nonCoffeeCards.forEach(card => {
+            card.style.visibility = "hidden";
+            card.style.opacity = "0";
+            card.style.position = "absolute";
+        });
+        healthyJuiceCards.forEach(card => {
+            card.style.visibility = "hidden";
+            card.style.opacity = "0";
+            card.style.position = "absolute";
+        });
+    } else if (category === 'healthy-juice') {
+        drinkButtons[4].classList.replace('bg-gray-300', 'bg-[var(--green-forest)]');
+        healthyJuiceCards.forEach(card => {
+            card.style.visibility = "visible";
+            card.style.opacity = "1";
+            card.style.position = "relative";
+        });
+        coffeeCards.forEach(card => {
+            card.style.visibility = "hidden";
+            card.style.opacity = "0";
+            card.style.position = "absolute";
+        });
+        nonCoffeeCards.forEach(card => {
+            card.style.visibility = "hidden";
+            card.style.opacity = "0";
+            card.style.position = "absolute";
+        });
+        pureJuiceCards.forEach(card => {
+            card.style.visibility = "hidden";
+            card.style.opacity = "0";
+            card.style.position = "absolute";
+        });
+    }
+}
+
+// Fungsi untuk filter kategori makanan
+function filterFood(category) {
+    const allFoodCards = document.querySelectorAll('.card.main-course, .card.snacks, .card.dessert');
+    const mainCourseCards = document.querySelectorAll('.card.main-course');
+    const snacksCards = document.querySelectorAll('.card.snacks');
+    const dessertCards = document.querySelectorAll('.card.dessert');
+    const foodButtons = document.querySelectorAll('.category-btn[onclick^="filterFood"]');
+
+    // Reset warna tombol makanan
+    foodButtons.forEach(btn => btn.classList.replace('bg-[var(--green-forest)]', 'bg-gray-300'));
+
+    // Atur warna tombol aktif
+    if (category === 'all') {
+        foodButtons[0].classList.replace('bg-gray-300', 'bg-[var(--green-forest)]');
+        allFoodCards.forEach(card => {
+            card.style.visibility = "visible";
+            card.style.opacity = "1";
+            card.style.position = "relative";
+            card.style.transition = "opacity 0.3s ease-in-out";
+        });
+    } else if (category === 'main-course') {
+        foodButtons[1].classList.replace('bg-gray-300', 'bg-[var(--green-forest)]');
+        mainCourseCards.forEach(card => {
+            card.style.visibility = "visible";
+            card.style.opacity = "1";
+            card.style.position = "relative";
+        });
+        snacksCards.forEach(card => {
+            card.style.visibility = "hidden";
+            card.style.opacity = "0";
+            card.style.position = "absolute";
+        });
+        dessertCards.forEach(card => {
+            card.style.visibility = "hidden";
+            card.style.opacity = "0";
+            card.style.position = "absolute";
+        });
+    } else if (category === 'snacks') {
+        foodButtons[2].classList.replace('bg-gray-300', 'bg-[var(--green-forest)]');
+        snacksCards.forEach(card => {
+            card.style.visibility = "visible";
+            card.style.opacity = "1";
+            card.style.position = "relative";
+        });
+        mainCourseCards.forEach(card => {
+            card.style.visibility = "hidden";
+            card.style.opacity = "0";
+            card.style.position = "absolute";
+        });
+        dessertCards.forEach(card => {
+            card.style.visibility = "hidden";
+            card.style.opacity = "0";
+            card.style.position = "absolute";
+        });
+    } else if (category === 'dessert') {
+        foodButtons[3].classList.replace('bg-gray-300', 'bg-[var(--green-forest)]');
+        dessertCards.forEach(card => {
+            card.style.visibility = "visible";
+            card.style.opacity = "1";
+            card.style.position = "relative";
+        });
+        mainCourseCards.forEach(card => {
+            card.style.visibility = "hidden";
+            card.style.opacity = "0";
+            card.style.position = "absolute";
+        });
+        snacksCards.forEach(card => {
+            card.style.visibility = "hidden";
+            card.style.opacity = "0";
+            card.style.position = "absolute";
+        });
+    }
+}
+
+//efek animation scroll halus button see now footer
+document.getElementById("see-now-btn").addEventListener("click", function (event) {
+    event.preventDefault(); // Mencegah perubahan URL default
+    document.getElementById("menu-section").scrollIntoView({
+      behavior: "smooth" // Animasi scroll halus
+    });
+  });
+
+  //efek animation scroll halus minuman navbar
+document.getElementById("minuman-navbar-btn").addEventListener("click", function (event) {
+    event.preventDefault(); // Mencegah perubahan URL default
+    document.getElementById("minuman-section").scrollIntoView({
+      behavior: "smooth" // Animasi scroll halus
+    });
+  });
+
+  //efek animation scroll halus makanan navbar
+document.getElementById("makanan-navbar-btn").addEventListener("click", function (event) {
+    event.preventDefault(); // Mencegah perubahan URL default
+    document.getElementById("makanan-section").scrollIntoView({
+      behavior: "smooth" // Animasi scroll halus
+    });
+  });
+
+  //efek animation scroll halus about navbar
+document.getElementById("about-navbar-btn").addEventListener("click", function (event) {
+    event.preventDefault(); // Mencegah perubahan URL default
+    document.getElementById("about-section").scrollIntoView({
+      behavior: "smooth" // Animasi scroll halus
+    });
+  });
+
+  // Smooth Scroll dan Auto Close untuk Mobile
+document.getElementById("minuman-navbar-btn-mobile").addEventListener("click", function (event) {
+    event.preventDefault();
+    document.getElementById("minuman-section").scrollIntoView({
+      behavior: "smooth"
+    });
+    // Auto Close Menu Mobile
+    mobileMenu.classList.add('translate-x-full');
+    setTimeout(() => mobileMenu.classList.add('hidden'), 300);
+    overlay.classList.add('hidden');
+});
+
+document.getElementById("makanan-navbar-btn-mobile").addEventListener("click", function (event) {
+    event.preventDefault();
+    document.getElementById("makanan-section").scrollIntoView({
+      behavior: "smooth"
+    });
+    // Auto Close Menu Mobile
+    mobileMenu.classList.add('translate-x-full');
+    setTimeout(() => mobileMenu.classList.add('hidden'), 300);
+    overlay.classList.add('hidden');
+});
+
+document.getElementById("about-navbar-btn-mobile").addEventListener("click", function (event) {
+    event.preventDefault();
+    document.getElementById("about-section").scrollIntoView({
+      behavior: "smooth"
+    });
+    // Auto Close Menu Mobile
+    mobileMenu.classList.add('translate-x-full');
+    setTimeout(() => mobileMenu.classList.add('hidden'), 300);
+    overlay.classList.add('hidden');
+});
+
+</script>
+
+</body>
+</html>
